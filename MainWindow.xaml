@@ -32,6 +32,17 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
+
+            <Ellipse Name="Pulsar" Width="200" Height="200"
+                     Canvas.Left="130" Canvas.Bottom="0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush RadiusX="1" RadiusY="1" GradientOrigin="0.3, 0.3">
+                        <GradientStop Color="Yellow" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                
+            </Ellipse>
         </Canvas>
     </Grid>
 </Window>

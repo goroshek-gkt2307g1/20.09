@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_20._09"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Main" Height="450" Width="800">
     <Grid>
+        <Canvas x:Name="MainCanvas">
+            <Button x:Name="runButton" Width="140" Height="60" 
+                    Content="run" Canvas.Left="100" Canvas.Top="100"
+                    MouseEnter="RunButton">
 
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                    x:Name="leftAnimation"
+                                    Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:0.3" 
+                                    FillBehavior="HoldEnd"/>
+                                
+                                <DoubleAnimation 
+                                    x:Name="topAnimation"
+                                    Storyboard.TargetProperty="(Canvas.Top)"
+                                    Duration="0:0:0.3"
+                                    FillBehavior="HoldEnd"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Canvas>
     </Grid>
 </Window>

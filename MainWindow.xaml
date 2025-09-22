@@ -36,12 +36,22 @@
             <Ellipse Name="Pulsar" Width="200" Height="200"
                      Canvas.Left="130" Canvas.Bottom="0">
                 <Ellipse.Fill>
-                    <RadialGradientBrush RadiusX="1" RadiusY="1" GradientOrigin="0.3, 0.3">
-                        <GradientStop Color="Yellow" Offset="0"/>
-                        <GradientStop Color="Red" Offset="1"/>
+                    <RadialGradientBrush RadiusX="0.5" RadiusY="0.5" GradientOrigin="0.5, 0.5">
+                        <GradientStop Color="Red" Offset="0"/>
+                        <GradientStop Color="Yellow" Offset="1"/>
                     </RadialGradientBrush>
                 </Ellipse.Fill>
-                
+				<Ellipse.Triggers>
+					<EventTrigger RoutedEvent="Window.Loaded">
+						<BeginStoryboard>
+							<Storyboard>
+								<ColorAnimation Storyboard.TargetProperty="Fill.GradientStops[1].Color"
+										To="Red" Duration="0:0:1" AutoReverse="True"
+										RepeatBehavior="Forever" />
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger>
+				</Ellipse.Triggers>
             </Ellipse>
         </Canvas>
     </Grid>
